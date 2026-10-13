@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy: #0C2C57;
+    --ember: #C0272D;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-white dark:bg-ink-900 text-ink-800 dark:text-ink-100;
+  }
+}
+
+@layer components {
+  .section-pad { @apply py-20 md:py-28 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto; }
+
+  .module-label {
+    @apply text-xs font-mono font-semibold tracking-[0.2em] uppercase
+           text-navy-900 dark:text-mist-300;
+  }
+  .module-frame {
+    @apply border border-navy-900/10 dark:border-mist-700/30
+           bg-white dark:bg-ink-800 rounded-lg p-6;
+  }
+  .kpi-readout {
+    @apply font-mono text-2xl font-bold text-navy-900 dark:text-mist-100;
+  }
+  .blueprint-grid {
+    background-image:
+      linear-gradient(rgba(12,44,87,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(12,44,87,0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .dark .blueprint-grid {
+    background-image:
+      linear-gradient(rgba(135,160,190,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(135,160,190,0.06) 1px, transparent 1px);
+  }
+}
